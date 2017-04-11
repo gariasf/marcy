@@ -3,21 +3,20 @@
 process.env.NODE_ENV = 'production' // Drastically increase performances
 
 const { default: installExtension, VUEJS_DEVTOOLS } = require('electron-devtools-installer')
+const path                                          = require('path')
+const electron                                      = require('electron')
+const minimist                                      = require('minimist')
 
-const path     = require('path')
-const electron = require('electron')
-const minimist = require('minimist')
 
-
-const app           = electron.app // Module to control application life.
+const app           = electron.app           // Module to control application life.
 const BrowserWindow = electron.BrowserWindow // Module to create native browser window.
 
 
 const appRoot = path.resolve(__dirname, '../..') // root directory
-const srcPath = path.join(appRoot, 'src') // src directory
+const srcPath = path.join(appRoot, 'src')        // src directory
 
+// Choose window start index depending on launch options
 const commandline = minimist(process.argv.slice(2));
-
 const appIndex = commandline.env === 'production' ? `file://${srcPath}/web-app/dist/index.html#/` : 'http://localhost:8080'
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -40,11 +39,14 @@ if (shouldQuit) {
 
 // Quit when all windows are closed
 app.on('window-all-closed', () => {
-    if (process.platform !== 'darwin')
+    if (process.platform !== 'darwin') {
         app.quit()
-});
+    }
+})
 
-function createWindow() {
+// This method will be called when Electron has finished
+// initialization and is ready to create browser windows.
+app.on('ready', () => {
     // Browser Window options
     const mainWindowOption = {
         title     : 'Marcy',
@@ -67,17 +69,10 @@ function createWindow() {
         // when you should delete the corresponding element.
         mainWindow = null
     })
-}
 
-// This method will be called when Electron has finished
-// initialization and is ready to create browser windows.
-// Some APIs can only be used after this event occurs.
-app.on('ready', createWindow)
-
-app.on('activate', function () {
-  // On OS X it's common to re-create a window in the app when the
-  // dock icon is clicked and there are no other windows open.
-  if (mainWindow === null) {
-    createWindow()
-  }
+    if(commandline.env != 'production') {
+        installExtension(VUEJS_DEVTOOLS)
+        .then((name) => console.log(`Added Extension:  ${name}`))
+        .catch((err) => console.log('An error occurred: ', err))
+    }
 })

@@ -1,24 +1,27 @@
 'use strict'
 
-// Entire app styles
+/*
+* Entire app styles
+*/
 import "../sass/styles.scss";
 
+/*
+* Modules
+*/
 import Vue       from 'vue'
 import VueRouter from 'vue-router'
 
-// Views
-import App from '../vue/App.vue'
-
+/*
+* Vue statements
+*/
 Vue.use(VueRouter)
 
-const router = new VueRouter({
-    mode: 'hash',
-    routes: [
-    { 
-        path: '/', 
-        component: App 
-    }
-  ]
-})
+/*
+* Components
+*/
+import router from './router/routes'
 
+/*
+* Mount app
+*/
 new Vue({router}).$mount('#marcy-mount')
