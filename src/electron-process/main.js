@@ -1,17 +1,20 @@
 'use strict'
 
-process.env.NODE_ENV = 'production'; // Drastically increase performances
+process.env.NODE_ENV = 'production' // Drastically increase performances
+
+const { default: installExtension, VUEJS_DEVTOOLS } = require('electron-devtools-installer')
 
 const path     = require('path')
 const electron = require('electron')
 const minimist = require('minimist')
 
+
 const app           = electron.app // Module to control application life.
 const BrowserWindow = electron.BrowserWindow // Module to create native browser window.
 
 
-const appRoot = path.resolve(__dirname, '../..'); // root directory
-const srcPath = path.join(appRoot, 'src'); // src directory
+const appRoot = path.resolve(__dirname, '../..') // root directory
+const srcPath = path.join(appRoot, 'src') // src directory
 
 const commandline = minimist(process.argv.slice(2));
 
@@ -56,7 +59,6 @@ function createWindow() {
 
     // ... and load our html page
     mainWindow.loadURL(appIndex)
-    mainWindow.openDevTools()
 
     // Emitted when the window is closed.
     mainWindow.on('closed', function () {

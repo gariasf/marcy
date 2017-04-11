@@ -7,7 +7,7 @@ import Vue       from 'vue'
 import VueRouter from 'vue-router'
 
 // Views
-import app from '../vue/app.vue'
+import App from '../vue/App.vue'
 
 Vue.use(VueRouter)
 
@@ -16,7 +16,7 @@ const router = new VueRouter({
     routes: [
     { 
         path: '/', 
-        component: app 
+        component: App 
     }
   ]
 })
