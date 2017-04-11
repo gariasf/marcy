@@ -39,8 +39,6 @@ module.exports = {
           fallback: "style-loader",
           use: [{
             loader: "css-loader" // translates CSS into CommonJS
-          },{
-            loader: "postcss-loader" // Process CSS (autoprefix)
           }, {
             loader: "sass-loader" // compiles Sass to CSS
           }]
