@@ -4,6 +4,7 @@ process.env.NODE_ENV = 'production'; // Drastically increase performances
 
 const path     = require('path')
 const electron = require('electron')
+const minimist = require('minimist')
 
 const app           = electron.app // Module to control application life.
 const BrowserWindow = electron.BrowserWindow // Module to create native browser window.
@@ -12,8 +13,9 @@ const BrowserWindow = electron.BrowserWindow // Module to create native browser 
 const appRoot = path.resolve(__dirname, '../..'); // root directory
 const srcPath = path.join(appRoot, 'src'); // src directory
 
-const compiledIndex    = `file://${srcPath}//web-app/dist/index.html` // Use compiled files
-const webpackDevServer = 'http://localhost:8080' // Use webpack dev server
+const commandline = minimist(process.argv.slice(2));
+
+const appIndex = commandline.env === 'production' ? `file://${srcPath}/web-app/dist/index.html#/` : 'http://localhost:8080'
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -53,7 +55,7 @@ function createWindow() {
     mainWindow = new BrowserWindow(mainWindowOption)
 
     // ... and load our html page
-    mainWindow.loadURL(process.argv[process.argv.length - 1] == '--hot' ? webpackDevServer : compiledIndex)
+    mainWindow.loadURL(appIndex)
     mainWindow.openDevTools()
 
     // Emitted when the window is closed.

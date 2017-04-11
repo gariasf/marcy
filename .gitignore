@@ -1,5 +1,5 @@
 node_modules/*
 npm-debug*
 build/*
-src/dist/*
+src/web-app/dist/*
 

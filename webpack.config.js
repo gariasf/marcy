@@ -1,15 +1,18 @@
-const path = require('path');
-const webpack = require('webpack');
+const path              = require('path');
+const webpack           = require('webpack');
+const minimist          = require('minimist')
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const commandline = minimist(process.argv.slice(2));
 
 module.exports = {
   context: path.resolve(__dirname, './src/web-app'),
   entry: './js/main.js',
   output: {
     path: path.resolve(__dirname, './src/web-app/dist/'),
-    publicPath: "/",
+    publicPath: commandline.env === 'production' ? "./" : '/',
     filename: 'marcy.bundle.js',
   },
   devServer: {
