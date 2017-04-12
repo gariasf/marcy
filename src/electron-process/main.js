@@ -51,9 +51,9 @@ app.on('ready', () => {
     const mainWindowOption = {
         title     : 'Marcy',
         width     :  900,
-        height    :  800,
+        height    :  550,
         minWidth  :  900,
-        minHeight :  550
+        minHeight :  550,
     };
 
     // Create the browser window
