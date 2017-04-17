@@ -1,0 +1,25 @@
+.header-bar {
+    background-color: nth($blue-grey, 10);
+    color: #fff;
+    -webkit-app-region: drag;
+    height: 30px;
+}
+
+.header-bar__window-controls {
+    margin: $base-pm/2 $base-pm;
+}
+
+.header-bar__window-control {
+    margin: 0 $base-pm;
+}
+
+.header-bar__window-controls-icon {
+    -webkit-app-region: no-drag;
+    height: 100%;
+}
+
+.header-bar__window-title {
+    margin: $base-pm/2 $base-pm;
+}
+
+

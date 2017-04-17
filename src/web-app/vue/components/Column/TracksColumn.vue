@@ -1,5 +1,5 @@
 <template>
-    <div class="tracks-column">
+    <div class="column column__tracks">
         TracksColumn
     </div>
 </template>

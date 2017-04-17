@@ -1,6 +1,6 @@
 <template>
     <div id="marcy-wrap" class="flex flex-dc">
-        <HeaderBar />
+        <!-- Maybe I'll add a custom window bar with controls here -->
         <div class="marcy-layout flex">
             <SideBar />
             <div class="marcy-content flex">

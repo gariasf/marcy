@@ -1,4 +1,9 @@
 /*
+* App assets
+*/
+import GlobalActions from './../app-actions/GlobalActions'
+
+/*
 * Modules
 */
 import VueRouter from 'vue-router'
@@ -8,6 +13,13 @@ import VueRouter from 'vue-router'
 */
 import App from '../../vue/App.vue'
 
+const init = {
+
+    app: () => {
+        GlobalActions.init()
+    }
+};
+
 /*
 * Routes
 */
@@ -16,7 +28,8 @@ const router = new VueRouter({
     routes: [
     { 
         path: '/', 
-        component: App 
+        component: App,
+        beforeEnter: init.app()
     }
   ]
 })

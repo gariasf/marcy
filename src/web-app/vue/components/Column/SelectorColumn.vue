@@ -1,5 +1,7 @@
 <template>
-    <div>SelectorColumn</div>
+    <div class="column column__selector">
+        SelectorColumn
+    </div>
 </template>
 
 <script>

@@ -1,0 +1,13 @@
+.sidebar__menu {
+    flex: 1;
+    margin: $base-pm 0;
+}
+
+.sidebar__menu__items-item {
+    padding: $base-pm $base-pm*2;
+
+    &:hover,
+    &.is-active {
+        background-color: nth($blue-grey, 2);
+    }
+}

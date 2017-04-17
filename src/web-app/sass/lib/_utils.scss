@@ -34,6 +34,16 @@ Flexbox utils
     align-items: center;
 }
 
+/* Justify space between */
+.flex-sb {
+    justify-content: space-between;
+}
+
+/* Justify space around */
+.flex-sa {
+    justify-content: space-around;
+}
+
 /* Text align */
 .ta-c {
     text-align: center;

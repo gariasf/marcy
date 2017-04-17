@@ -23,6 +23,7 @@ const appIndex = commandline.env === 'production' ? `file://${srcPath}/web-app/d
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow = null
 
+
 // Make the app a single-instance app (to avoid Database concurrency)
 const shouldQuit = app.makeSingleInstance(() => {
     // Someone tried to run a second instance, we should focus our window.
@@ -44,16 +45,19 @@ app.on('window-all-closed', () => {
     }
 })
 
+
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 app.on('ready', () => {
+    
     // Browser Window options
     const mainWindowOption = {
         title     : 'Marcy',
-        width     :  900,
-        height    :  550,
-        minWidth  :  900,
-        minHeight :  550,
+        frame     : true,
+        width     : 900,
+        height    : 550,
+        minWidth  : 900,
+        minHeight : 550
     };
 
     // Create the browser window
@@ -74,5 +78,6 @@ app.on('ready', () => {
         installExtension(VUEJS_DEVTOOLS)
         .then((name) => console.log(`Added Extension:  ${name}`))
         .catch((err) => console.log('An error occurred: ', err))
+        mainWindow.openDevTools()
     }
 })
