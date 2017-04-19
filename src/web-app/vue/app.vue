@@ -18,8 +18,8 @@
     import SideBar        from './components/Sidebar/Sidebar'
     import HeaderBar      from './components/Header/HeaderBar'
     import PlayerPanel    from './components/PlayerPanel/PlayerPanel'
-    import TracksColumn   from './components/Column/TracksColumn'
-    import SelectorColumn from './components/Column/SelectorColumn'
+    import TracksColumn   from './components/Column/TracksColumn/TracksColumn'
+    import SelectorColumn from './components/Column/SelectorColumn/SelectorColumn'
 
     export default {
         name: 'App',

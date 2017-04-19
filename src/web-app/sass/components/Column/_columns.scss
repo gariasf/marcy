@@ -1,2 +1,3 @@
-@import './selector-column';
-@import './tracks-column';
+@import './column-toolbar'; // General toolbar styles
+@import './SelectorColumn/selector-column'; // Song/Track selection column
+@import './TracksColumn/tracks-column'; // Playlist/playing queue column

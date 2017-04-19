@@ -1,6 +1,7 @@
 .sidebar__menu {
     flex: 1;
-    margin: $base-pm 0;
+    padding-top: $base-pm*2;
+    border-right: 1px solid $layout-border-colour;
 }
 
 .sidebar__menu__items-item {

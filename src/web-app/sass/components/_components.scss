@@ -1,5 +1,6 @@
 /* 
 * Components
 */
+@import './Shared/icon'; // Global icon component
 @import './Sidebar/sidebar'; // Sidebar, menus and album cover
 @import './Column/columns'; // Song tracks and selector column, where tracks are shown and chosen respectively

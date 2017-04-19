@@ -1,0 +1,12 @@
+// Folder and file list container
+.column__selector__folders__listing {
+
+    // Every row (every file/folder being listed)
+    div {
+        font-size: .9em;
+        padding: $base-pm/4 $base-pm;
+        &:hover {
+            background-color: nth($blue-grey, 2);
+        }
+    }
+}

@@ -7,6 +7,15 @@
     flex: 1;
 }
 
+.separator {
+    height: 1px;
+    background-color: $layout-border-colour;
+    min-width: 1px;
+    width: 100%;
+    border: none;
+    margin: $base-pm*2 0;
+}
+
 // * {
 //     outline: 1px solid red;
 // }

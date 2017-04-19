@@ -1,4 +1,8 @@
-/* Cover header */
-@import './sidebar-header';
-/* Sidebar menu (options and sections) */
-@import './sidebar-menu';
+.sidebar {
+    width: 25%;
+    max-width: 300px;
+}
+
+@import './sidebar-header'; // Cover header
+@import './sidebar-menu'; // Sidebar menu (options and sections)
+

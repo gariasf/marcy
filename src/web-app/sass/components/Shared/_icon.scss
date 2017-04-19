@@ -1,0 +1,10 @@
+.column__selector__toolbar__action-icon {
+    svg {
+        transform: scale(.75);
+        fill:  nth($blue-grey, 8);
+    }
+
+    &:hover {
+        background-color: nth($blue-grey, 2);
+    }
+}

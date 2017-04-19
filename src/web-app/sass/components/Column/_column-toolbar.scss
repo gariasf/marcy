@@ -1,0 +1,24 @@
+/*
+* General
+*/
+.column__selector__toolbar__input-wrapper {
+    flex: 1;
+    line-height: 1;
+}
+
+.column__selector__toolbar__input {
+    width: 100%;
+    user-select: initial;
+    &::selection {
+        color: currentColor; 
+        background: nth($blue-grey, 5);
+    }
+}
+
+/*
+* Specific
+*/
+.column__selector__toolbar__folders {
+    border-bottom: 1px solid $layout-border-colour;
+}
+

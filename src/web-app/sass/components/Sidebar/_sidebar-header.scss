@@ -1,7 +1,6 @@
 .sidebar__header {
     height: 100%;
-    max-height: 150px;
-    min-width: 240px;
+    max-height: 200px;
     background-image: url('/media/img/default_album_art.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -19,5 +18,5 @@
 
 .sidebar__header__song-data-album, 
 .sidebar__header__song-data-author {
-    color:  transparentize(nth($blue-grey, 2), .4);
+    color: transparentize(nth($blue-grey, 2), .3);
 }

@@ -1,9 +1,12 @@
 <template>
     <div class="sidebar__menu">
         <ul class="sidebar__menu__items">
-            <SideBarMenuItem text='Library' is-active='true' />
-            <SideBarMenuItem text='Folders' />
+            <SideBarMenuItem text='Library' />
+            <SideBarMenuItem text='Folders' is-active='true' />
             <SideBarMenuItem text='Playlists' />
+            <hr class="separator" />
+            <SideBarMenuItem text='Settings' />
+            <SideBarMenuItem text='About Marcy' />
         </ul>
     </div>
 </template>

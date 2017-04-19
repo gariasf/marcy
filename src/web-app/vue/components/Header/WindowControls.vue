@@ -1,3 +1,4 @@
+<!-- NOT BEING USED ATM -->
 <template>
         <div class="header-bar__window-controls flex flex-full-center">
             <button title='Configuration'>

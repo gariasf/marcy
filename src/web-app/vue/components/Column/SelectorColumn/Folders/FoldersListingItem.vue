@@ -1,9 +1,9 @@
 <template>
-    <div>PlayerPanel</div>
+    <div>FoldersListingItem</div>
 </template>
 
 <script>
     export default {
-        name: 'PlayerPanel'
+        name: 'FoldersListingItem'
     }
 </script>
