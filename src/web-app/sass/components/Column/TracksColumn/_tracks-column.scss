@@ -12,11 +12,14 @@
 .column__tracks__table__header,
 .column__tracks__table__item {
     display: grid;
-    grid-template-columns: 2% 28% 28% 28% 6% 8%;
+    grid-template-columns: 5% 28.333333% 28.333333% 28.333333% 10%;
 }
 
-.column__tracks__table__atribute {
+.column__tracks__table__cell-title {
     border-bottom: 1px solid $layout-border-colour;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     
     &:not(:last-child) {
         border-right: 1px solid $layout-border-colour;
@@ -25,6 +28,9 @@
 
 .column__tracks__table__item__attr {
     padding: 0 $base-pm;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .column__tracks__table__item {

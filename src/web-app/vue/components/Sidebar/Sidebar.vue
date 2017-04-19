@@ -1,6 +1,6 @@
 <template>
     <div class="sidebar flex flex-dc">
-        <!-- Contains the cover and data about the song and it's author -->
+        <!-- Contains the cover and data about the song and its author -->
         <SideBarHeader />
         <!-- Main app navigation, allows to choose the diferent selection sections and to open the settings -->
         <SideBarMenu />

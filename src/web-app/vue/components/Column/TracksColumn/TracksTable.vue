@@ -1,25 +1,25 @@
 <template>
     <div class="column__tracks__table">
         <!-- Table header titles, puts name to each column -->
-        <TracksTableAtributes />
+        <TracksTableCellTitles />
         <!-- The components below this represent a track each -->
-        <TracksTableItem />
-        <TracksTableItem />
-        <TracksTableItem />
-        <TracksTableItem />
-        <TracksTableItem />
+        <TracksTableRow />
+        <TracksTableRow />
+        <TracksTableRow />
+        <TracksTableRow />
+        <TracksTableRow />
     </div>
 </template>
 
 <script>
-    import TracksTableAtributes from './TracksTableAtributes'
-    import TracksTableItem from './TracksTableItem'
+    import TracksTableCellTitles from './TracksTableCellTitles'
+    import TracksTableRow from './TracksTableRow'
 
     export default {
         name: 'TracksTable',
         components: {
-            TracksTableAtributes,
-            TracksTableItem
+            TracksTableCellTitles,
+            TracksTableRow
         }
     }
 </script>

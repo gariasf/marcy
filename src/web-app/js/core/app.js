@@ -10,6 +10,6 @@ const browserWindows = {};
 browserWindows.main = remote.getCurrentWindow();
 
 export default {
-    browserWindows,      // Object containing all the windows
+    browserWindows,            // Object containing all the windows
     version: app.getVersion(), // Marcy version
 };

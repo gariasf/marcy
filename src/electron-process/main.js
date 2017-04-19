@@ -52,12 +52,12 @@ app.on('ready', () => {
     
     // Browser Window options
     const mainWindowOption = {
-        title                : 'Marcy',
-        frame                : true,
-        width                : 900,
-        height               : 550,
-        minWidth             : 900,
-        minHeight            : 550,
+        title          : 'Marcy',
+        frame          : true,
+        width          : 900,
+        height         : 550,
+        minWidth       : 900,
+        minHeight      : 550,
         webPreferences : {experimentalFeatures: true}
     };
 

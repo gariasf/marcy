@@ -1,12 +1,12 @@
 <template>
-    <div class="column__tracks__table__atribute flex flex-full-center">
+    <div class="column__tracks__table__cell-title ta-c">
         {{attrName}}
     </div>
 </template>
 
 <script>
     export default {
-        name: 'TracksTableAtribute',
+        name: 'TracksTableCellTitle',
         props: ['attrName']
     }
 </script>
