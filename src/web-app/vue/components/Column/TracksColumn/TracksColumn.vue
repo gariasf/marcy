@@ -1,5 +1,5 @@
 <template>
-    <div class="column column__tracks">
+    <div class="column column__tracks lb-b">
         <!-- For managing playlists and the playing queue, also for searching songs in the playing queue -->
         <TracksToolbar />
         <!-- List of tracks in the playing queue -->

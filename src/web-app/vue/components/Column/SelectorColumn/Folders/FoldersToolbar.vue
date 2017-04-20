@@ -1,5 +1,5 @@
 <template>
-    <div class="column__selector__toolbar__folders flex flex-cross-center flex-sa">
+    <div class="column__selector__toolbar__folders flex flex-cross-center flex-sa lb-b">
         <div class="column__selector__toolbar__action-icons flex flex-cross-center flex-sa">
             <!-- Go back in history -->
             <Icon class="column__selector__toolbar__action-icon" iconName='arrow-left-thick' />

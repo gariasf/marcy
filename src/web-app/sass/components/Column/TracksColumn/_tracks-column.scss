@@ -1,22 +1,23 @@
 /*
-* Global
-*/
+ * Global
+ */
 .column__tracks {
     flex: 1;
-    border-bottom: 1px solid $layout-border-colour;
 }
 
 /*
-* Table
-*/
-.column__tracks__table__header,
-.column__tracks__table__item {
+ * Table of tracks in the current queue
+ */
+// Table column titles and table row layout
+.column__tracks__table__header, 
+.column__tracks__table__item { 
     display: grid;
     grid-template-columns: 5% 28.333333% 28.333333% 28.333333% 10%;
 }
 
-.column__tracks__table__cell-title {
-    border-bottom: 1px solid $layout-border-colour;
+// Title cell on the header
+.column__tracks__table__cell-title { 
+    font-size: .9em;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -26,15 +27,18 @@
     }
 }
 
-.column__tracks__table__item__attr {
+// Row cell
+.column__tracks__table__item__attr { 
+    font-size: .9em;
     padding: 0 $base-pm;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.column__tracks__table__item {
+// Table row
+.column__tracks__table__item { 
     &:hover {
-         background-color: nth($blue-grey, 2);
+         background-color: nth($palette-primary, 2);
     }
 }

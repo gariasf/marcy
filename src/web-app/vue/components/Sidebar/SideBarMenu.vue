@@ -1,5 +1,5 @@
 <template>
-    <div class="sidebar__menu">
+    <div class="sidebar__menu lb-r">
         <ul class="sidebar__menu__items">
             <SideBarMenuItem text='Library' />
             <SideBarMenuItem text='Folders' is-active='true' />

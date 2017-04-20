@@ -1,16 +1,16 @@
 /*
-* App assets
-*/
+ * App assets
+ */
 import GlobalActions from './../app-actions/GlobalActions'
 
 /*
-* Modules
-*/
+ * Modules
+ */
 import VueRouter from 'vue-router'
 
 /*
-* Views
-*/
+ * Views
+ */
 import App from '../../vue/App.vue'
 
 const init = {
@@ -21,8 +21,8 @@ const init = {
 };
 
 /*
-* Routes
-*/
+ * Routes
+ */
 const router = new VueRouter({
     mode: 'hash',
     routes: [

@@ -1,8 +1,9 @@
-// Entire song/track selection column (desn't depend on section)
+/*
+ * Global
+ */
 .column__selector {
     width: 30%;
     max-width: 350px;
-    border-right: 1px solid $layout-border-colour;
 }
 
 @import './Folders/folders'; // Folder selection section

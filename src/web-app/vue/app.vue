@@ -1,16 +1,16 @@
 <template>
     <div id="marcy-wrap" class="flex flex-dc">
         <!-- Maybe I'll add a custom window bar with controls here -->
-        <div class="marcy-layout flex">
+        <div class="marcy-layout flex f1">
             <!-- Contains the song cover and the global navigation menu -->
             <SideBar />
-            <div class="marcy-content flex">
+            <div class="marcy-content flex f1">
                 <!-- Different sections from which to select a track to add to the playing queue -->
                 <SelectorColumn />
-                <div class="marcy-tracks flex flex-dc">
+                <div class="marcy-tracks flex flex-dc f1">
                     <!-- Current playing queue -->
                     <TracksColumn />
-                    <!-- Javascript autio element control panel (in UI)-->
+                    <!-- Audio control panel -->
                     <PlayerPanel />
                 </div>
             </div>

@@ -1,7 +1,6 @@
 .sidebar__menu {
     flex: 1;
     padding-top: $base-pm*2;
-    border-right: 1px solid $layout-border-colour;
 }
 
 .sidebar__menu__items-item {
@@ -9,6 +8,6 @@
 
     &:hover,
     &.is-active {
-        background-color: nth($blue-grey, 2);
+        background-color: nth($palette-primary, 2);
     }
 }

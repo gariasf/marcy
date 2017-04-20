@@ -1,5 +1,5 @@
 <template>
-    <div class="column column__selector">
+    <div class="column column__selector lb-r">
         <!-- Diferent sections of the selector column -->
         <Folders />
     </div>

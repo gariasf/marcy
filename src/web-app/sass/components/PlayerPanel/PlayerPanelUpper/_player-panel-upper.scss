@@ -1,0 +1,10 @@
+.player-panel__upper {
+    display: grid;
+    grid-template-columns: 120px auto 120px;
+}
+
+.player-panel__upper__audio-control,
+.player-panel__upper__visualizer,
+.player-panel__upper__v-control {
+    padding: $base-pm $base-pm/2;
+}

@@ -4,8 +4,7 @@ const ipcRenderer    = electron.ipcRenderer
 import app from '../core/app'
 
 const init = () => {
-    // Init marcy
-    start()
+    start() // Init marcy
 }
 
 const start = () => {
@@ -19,8 +18,5 @@ const restart = () => {
 export default {
     init,
     start,
-
-    app: {
-        restart
-    }
+    restart
 }

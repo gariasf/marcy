@@ -1,0 +1,15 @@
+.player-panel__lower {
+    display: grid;
+    grid-template-columns: 25% 55px auto;
+}
+
+.player-panel__lower__playlist-count {
+    font-size: .75em;
+    justify-content: flex-end;
+}
+
+.player-panel__lower__playlist-count,
+.player-panel__lower__flow-control,
+.player-panel__lower__progress-bar {
+    padding: $base-pm/2 $base-pm;
+}

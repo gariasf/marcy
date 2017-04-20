@@ -1,21 +1,20 @@
 /*
 General utils
 */
-
-/* Cursor pointer */
+// Cursor pointer
 .pointer {
     cursor: pointer!important;
 }
 
 /* 
-Flexbox utils 
-*/
+ * Flexbox utils 
+ */
 
 .flex {
     display: flex;
 }
 
-/* Flex direction */
+// Flex direction
 .flex-dc {
     flex-direction: column;
 }
@@ -25,30 +24,60 @@ Flexbox utils
     align-items: center;
 }
 
-/* Center within the main axis */
+// Center within the main axis
 .flex-main-center {
     justify-content: center;
 }
-/* Center within the cross-axis */
+
+// Center within the cross-axis
 .flex-cross-center {
     align-items: center;
 }
 
-/* Justify space between */
+// Justify space between
 .flex-sb {
     justify-content: space-between;
 }
 
-/* Justify space around */
+// Justify space around
 .flex-sa {
     justify-content: space-around;
 }
 
-/* Text align */
+.f1 {
+    flex: 1;
+}
+
+/* 
+ * Text align
+ */
 .ta-c {
     text-align: center;
 }
 
 .ta-r {
     text-align: right;
+}
+
+/* 
+ * Layout border
+ */
+// Left
+.lb-l {
+ border-left: 1px solid $layout-border-colour;
+}
+
+// Right
+.lb-r {
+ border-right: 1px solid $layout-border-colour;
+}
+
+// Top
+.lb-t {
+ border-top: 1px solid $layout-border-colour;
+}
+
+// Bottom
+.lb-b {
+ border-bottom: 1px solid $layout-border-colour;
 }

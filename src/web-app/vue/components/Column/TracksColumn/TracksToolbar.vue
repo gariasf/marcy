@@ -1,5 +1,5 @@
 <template>
-    <div class="column__selector__toolbar__folders flex flex-cross-center flex-sa">
+    <div class="column__selector__toolbar__folders flex flex-cross-center flex-sa lb-b">
         <div class="column__selector__toolbar__action-icons flex flex-cross-center flex-sa">
             <!-- Create a new playlist (will create a new playing queue) -->
             <Icon class="column__selector__toolbar__action-icon" iconName='add-playlist' />

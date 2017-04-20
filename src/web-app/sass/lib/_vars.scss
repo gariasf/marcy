@@ -1,11 +1,9 @@
 $base-pm: 8px; // Base padding/margin (8px grid)
 
-
-
 /*
-* Colour Palettes
-*/
-$blue-grey: (
+ * Colour Palettes
+ */
+$palette-primary: (
     #607d8b
     #eceff1
     #cfd8dc
@@ -18,21 +16,21 @@ $blue-grey: (
     #263238
 );
 
-$light-blue: (
-    #03a9f4
-    #e1f5fe
-    #b3e5fc
-    #81d4fa
-    #4fc3f7
-    #29b6f6
-    #039be5
-    #0288d1
-    #0277bd
-    #01579b
-    #80d8ff
-    #40c4ff
-    #00b0ff
-    #0091ea
-);
+// $palette-secondary: (
+//     #03a9f4
+//     #e1f5fe
+//     #b3e5fc
+//     #81d4fa
+//     #4fc3f7
+//     #29b6f6
+//     #039be5
+//     #0288d1
+//     #0277bd
+//     #01579b
+//     #80d8ff
+//     #40c4ff
+//     #00b0ff
+//     #0091ea
+// );
 
-$layout-border-colour: nth($blue-grey, 3);
+$layout-border-colour: nth($palette-primary, 3); // Layout bouding borders colour

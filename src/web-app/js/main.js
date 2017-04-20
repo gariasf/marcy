@@ -19,7 +19,7 @@ Vue.use(VueRouter)
 /*
 * Components
 */
-import router from './router/routes'
+import router from './app-router/routes'
 
 /*
 * Mount app

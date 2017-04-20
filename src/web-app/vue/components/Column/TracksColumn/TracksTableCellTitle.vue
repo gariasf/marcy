@@ -1,5 +1,5 @@
 <template>
-    <div class="column__tracks__table__cell-title ta-c">
+    <div class="column__tracks__table__cell-title ta-c lb-b">
         {{attrName}}
     </div>
 </template>

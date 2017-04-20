@@ -1,5 +1,5 @@
 /*
-* General
+* Global
 */
 .column__selector__toolbar__input-wrapper {
     flex: 1;
@@ -11,14 +11,6 @@
     user-select: initial;
     &::selection {
         color: currentColor; 
-        background: nth($blue-grey, 5);
+        background: nth($palette-primary, 5);
     }
 }
-
-/*
-* Specific
-*/
-.column__selector__toolbar__folders {
-    border-bottom: 1px solid $layout-border-colour;
-}
-

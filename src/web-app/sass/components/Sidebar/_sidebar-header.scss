@@ -12,11 +12,11 @@
     width: 100%;
     background-color: rgba(0,0,0, .5);
     padding: $base-pm/2 $base-pm;
-    color:  nth($blue-grey, 2);
+    color:  nth($palette-primary, 2);
     font-size: .8em;
 }
 
 .sidebar__header__song-data-album, 
 .sidebar__header__song-data-author {
-    color: transparentize(nth($blue-grey, 2), .3);
+    color: transparentize(nth($palette-primary, 2), .3);
 }
