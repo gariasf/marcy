@@ -1,7 +1,7 @@
 const globalShortcut = electron.remote.globalShortcut
 const ipcRenderer    = electron.ipcRenderer
 
-import app from '../core/app'
+import app from '../app-core/app'
 
 const init = () => {
     start() // Init marcy
