@@ -1,7 +1,5 @@
 <template>
-    <i>
-         <svg viewBox="0 0 24 24"><use :href="'/media/img/icons.svg#' + iconName"></use></svg>
-    </i>
+    <svg viewBox="0 0 24 24"><use :href="'./media/img/icons.svg#' + iconName"></use></svg>
 </template>
 
 <script>

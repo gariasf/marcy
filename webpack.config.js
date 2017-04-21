@@ -8,6 +8,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const commandline = minimist(process.argv.slice(2));
 
 module.exports = {
+  target: 'node',
   context: path.resolve(__dirname, './src/web-app'),
   entry: './js/main.js',
   output: {
@@ -20,13 +21,14 @@ module.exports = {
             port: 8080,
             historyApiFallback: true,
             hot: false,
-            quiet: true
+            quiet: false
     },
     module: {
         loaders: [
         {
             test: /\.vue$/,
             loader: 'vue-loader',
+            exclude: /node_modules/
         },
         {
             test: /\.js$/,
@@ -60,7 +62,7 @@ module.exports = {
                     },
                 }],
             },
-        ]
+        ],
     },
     resolve: {
         extensions: ['.vue', '.js', '.scss', '.html'],
