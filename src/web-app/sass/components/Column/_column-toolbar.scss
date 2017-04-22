@@ -9,6 +9,9 @@
 .column__selector__toolbar__input {
     width: 100%;
     user-select: initial;
+    font-size: .8em;
+    color: nth($palette-primary, 7);
+    padding: 0 $base-pm/2;
     &::selection {
         color: currentColor; 
         background: nth($palette-primary, 5);

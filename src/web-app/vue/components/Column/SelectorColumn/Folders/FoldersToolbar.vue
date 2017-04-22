@@ -1,5 +1,5 @@
 <template>
-    <div class="column__selector__toolbar__folders flex flex-cross-center flex-sa lb-b">
+    <div class="column__selector__toolbar__folders flex flex-cross-center flex-sa lb-b ">
         <div class="column__selector__toolbar__action-icons flex flex-cross-center flex-sa">
             <!-- Go back in history -->
             <i class="column__selector__toolbar__action-icon"><Icon  iconName='arrow-left-thick' /></i>
@@ -11,8 +11,8 @@
             <i class="column__selector__toolbar__action-icon" v-on:click="changeToHome"><Icon iconName='home-filled' /></i>
         </div>
         <!-- For setting a path directly -->
-        <div class="column__selector__toolbar__input-wrapper flex flex-full-center">
-            <input class="column__selector__toolbar__input" type='text' placeholder='Path'>
+        <div class="column__selector__toolbar__input-wrapper flex flex-full-center lb-l">
+            <input class="column__selector__toolbar__input" type='text' :value='currentDir'>
         </div>
     </div>
 </template>
@@ -25,7 +25,7 @@
         components: {
             Icon
         },
-        props: ['goUp', 'goHome'],
+        props: ['currentDir', 'goUp', 'goHome'],
         methods: {
             changeToHome: function() {
                 this.goHome()

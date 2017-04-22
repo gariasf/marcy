@@ -1,7 +1,7 @@
 <template>
     <div class="column__selector__folders">
         <!-- Toolbar to navigate the FS and/or select a path -->
-        <FoldersToolbar :currentDir="this.currentDir" :goUp="goUp" :goHome="goHome" />
+        <FoldersToolbar :currentDir="this.currentDir" :goUp="goUp" :goHome="goHome" :goTo="goTo" />
         <!-- List of files and folders in the current folder -->
         <FoldersListing :dirContent="this.dirContents" :goIn="goIn" />
     </div>
@@ -13,6 +13,7 @@
 
     import SelectorActions from './../../../../../js/app-actions/SelectorActions'
 
+    import fs from 'fs'
     import path from 'path'
 
     export default {
@@ -29,16 +30,24 @@
         },
         methods: {
             goUp: function() {
-                this.currentDir = path.join(this.currentDir + '/../')
-                this.dirContents = SelectorActions.lsDir(this.currentDir)
+                if(SelectorActions.lsDir(path.join(this.currentDir + '/../')) == null) {
+                    console.log("No permission, man")
+                } else {
+                    this.currentDir = path.join(this.currentDir + '/../')
+                    this.dirContents = SelectorActions.lsDir(this.currentDir)
+                }
             },
             goHome: function() {
-                this.dirContents = SelectorActions.lsDir(SelectorActions.defaultDir)
                 this.currentDir = SelectorActions.defaultDir;
+                this.dirContents = SelectorActions.lsDir(SelectorActions.defaultDir)
             },
             goIn: function(dir) {
-                this.currentDir = path.join(this.currentDir, dir)
-                this.dirContents = SelectorActions.lsDir(this.currentDir)
+                if(fs.statSync(path.join(this.currentDir, dir)).isDirectory()) {
+                    this.currentDir = path.join(this.currentDir, dir)
+                    this.dirContents = SelectorActions.lsDir(this.currentDir)
+                } else {
+                    console.log(dir)
+                }
             }
         }
     }

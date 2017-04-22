@@ -59,8 +59,9 @@ app.on('ready', () => {
         minWidth       : 900,
         minHeight      : 550,
         webPreferences : {
-            experimentalFeatures: true,
-            blinkFeatures  : 'OverlayScrollbars' // Enable overlay scrollbars} // Enable CSS grid property
+            blinkFeatures       : 'OverlayScrollbars', // Enable overlay scrollbars}
+            experimentalFeatures: true,                // Enable CSS grid property
+
         }
     };
 
