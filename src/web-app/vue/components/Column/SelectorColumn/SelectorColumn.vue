@@ -1,17 +1,13 @@
 <template>
     <div class="column column__selector lb-r">
         <!-- Diferent sections of the selector column -->
-        <Folders />
+        <router-view></router-view>
     </div>
 </template>
 
 <script>
-    import Folders from './Folders/Folders'
 
     export default {
-        name: 'SelectorColumn',
-        components: {
-            Folders
-        }
+        name: 'SelectorColumn'
     }
 </script>

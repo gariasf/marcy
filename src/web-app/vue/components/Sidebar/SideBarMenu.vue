@@ -1,11 +1,11 @@
 <template>
     <div class="sidebar__menu lb-r">
         <ul class="sidebar__menu__items">
-            <SideBarMenuItem text='Library'   icon="library" />
-            <SideBarMenuItem text='Folders'   icon="folders-multiple" is-active='true' />
-            <SideBarMenuItem text='Playlists' icon="playlist"/>
+            <router-link to="/selector/library"><SideBarMenuItem text='Library' icon="library" :is-active="($route.path == '/selector/library') ? 'true' : 'false'" /></router-link>
+            <router-link to="/selector/folders"><SideBarMenuItem text='Folders' icon="folders-multiple" :is-active="($route.path == '/selector/folders') ? 'true' : 'false'" /></router-link>
+            <router-link to="/selector/playlists"><SideBarMenuItem text='Playlists' icon="playlist" :is-active="($route.path == '/selector/playlists') ? 'true' : 'false' " /></router-link>
             <hr class="separator" />
-            <SideBarMenuItem text='Settings'    icon="config" />
+            <router-link to="/settings"><SideBarMenuItem text='Settings' icon="config" /></router-link>
             <SideBarMenuItem text='About Marcy' icon="info" />
         </ul>
     </div>
