@@ -37,16 +37,27 @@
                     this.dirContents = SelectorActions.lsDir(this.currentDir)
                 }
             },
+
             goHome: function() {
                 this.currentDir = SelectorActions.defaultDir;
                 this.dirContents = SelectorActions.lsDir(SelectorActions.defaultDir)
             },
+
             goIn: function(dir) {
                 if(fs.statSync(path.join(this.currentDir, dir)).isDirectory()) {
                     this.currentDir = path.join(this.currentDir, dir)
                     this.dirContents = SelectorActions.lsDir(this.currentDir)
                 } else {
                     console.log(dir)
+                }
+            },
+
+            goTo: function(folderPath) {
+                 if(SelectorActions.lsDir(folderPath[0]) == null) {
+                    console.log("No permission, man")
+                } else {
+                    this.currentDir = folderPath[0]
+                    this.dirContents = SelectorActions.lsDir(folderPath[0])
                 }
             }
         }

@@ -2,7 +2,7 @@
     <div class="column__selector__toolbar__folders flex flex-cross-center flex-sa lb-b ">
         <div class="column__selector__toolbar__action-icons flex flex-cross-center flex-sa">
             <!-- Go back in history -->
-            <i class="column__selector__toolbar__action-icon"><Icon  iconName='arrow-left-thick' /></i>
+            <i class="column__selector__toolbar__action-icon"><Icon iconName='arrow-left-thick' /></i>
             <!-- Go forward in history -->
             <i class="column__selector__toolbar__action-icon"><Icon iconName='arrow-right-thick' /></i>
             <!-- Go up in the fs -->
@@ -12,7 +12,8 @@
         </div>
         <!-- For setting a path directly -->
         <div class="column__selector__toolbar__input-wrapper flex flex-full-center lb-l">
-            <input class="column__selector__toolbar__input" type='text' :value='currentDir'>
+            <input class="column__selector__toolbar__input" type='text' :value='currentDir' disabled>
+            <i class="column__selector__toolbar__action-icon" v-on:click="openFolderSelector"><Icon iconName='folder-open' /></i>
         </div>
     </div>
 </template>
@@ -20,18 +21,31 @@
 <script>
     import Icon from './../../../Shared/Icon'
 
+    const dialog = electron.remote.dialog;
+
     export default {
         name: 'FoldersToolbar',
         components: {
             Icon
         },
-        props: ['currentDir', 'goUp', 'goHome'],
+        props: ['currentDir', 'goUp', 'goHome', 'goTo'],
         methods: {
             changeToHome: function() {
                 this.goHome()
             },
+
             changeToUp: function() {
                 this.goUp()
+            },
+            
+            openFolderSelector: function() {
+                dialog.showOpenDialog({
+                    properties: ['openDirectory'],
+                    }, (result) => {
+                        if(result) {
+                           this.goTo(result)
+                        }
+                    });
             }
         }
     }

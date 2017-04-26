@@ -3,7 +3,6 @@
 */
 .column__selector__toolbar__input-wrapper {
     flex: 1;
-    line-height: 1;
 }
 
 .column__selector__toolbar__input {
@@ -12,6 +11,7 @@
     font-size: .8em;
     color: nth($palette-primary, 7);
     padding: 0 $base-pm/2;
+    
     &::selection {
         color: currentColor; 
         background: nth($palette-primary, 5);

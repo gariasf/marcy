@@ -1,25 +1,25 @@
-import path from 'path'
-import fs   from 'fs'
-import os   from 'os'
+import path     from 'path'
+import fs       from 'fs'
+import os       from 'os'
 
 import app from './../app-core/app'
 
-
 const defaultDir = os.homedir() // OS default user home directory
-const fileRe     = new RegExp(app.supportedExtensions.join("|"), 'gi'); // Regex expression to filter the apps suported extensions out
 
 /*
- * Returns files that have a specific extension
- * @param element - a directory listing element
+ * Filters files that have a specific extension
+ * @param element element - a directory listing element
+ * @return element
  */
-function fileFilter(element) {
+const fileFilter = function (element) {
     let extName = path.extname(element)
-    return extName.match(fileRe)
-};
+    return app.supportedExtensions.includes(extName)
+}
 
 /*
  * Returns a filtered list of items contained by a folder
- * @param dir - a directory path
+ * @param string dir - a directory path
+ * @return array
  */
 const lsDir = function(dir) {
     let totalItems;
