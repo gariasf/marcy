@@ -1,5 +1,5 @@
 <template>
-    <div v-on:dblclick="handleClick">{{text}}</div>
+    <div v-on:dblclick="handleClick" :title="this.text">{{text}}</div>
 </template>
 
 <script>

@@ -12,6 +12,8 @@
     import FoldersListing from './FoldersListing'
 
     import SelectorActions from './../../../../../js/app-actions/SelectorActions'
+    import Player from './../../../../../js/app-core/player'
+    import Utils from './../../../../../js/utils/utils'
 
     import fs from 'fs'
     import path from 'path'
@@ -44,11 +46,14 @@
             },
 
             goIn: function(dir) {
-                if(fs.statSync(path.join(this.currentDir, dir)).isDirectory()) {
+                if(!fs.statSync(path.join(this.currentDir, dir)).isDirectory()) {
+                    // If we are here then this means that we're opening an audio file, do something with it
+                    // This is temporal, will change once we have functional playing queue
+                    Player.setAudioSrc(Utils.parseUri(path.resolve(this.currentDir, dir)))
+                    Player.play()
+                } else {
                     this.currentDir = path.join(this.currentDir, dir)
                     this.dirContents = SelectorActions.lsDir(this.currentDir)
-                } else {
-                    console.log(dir)
                 }
             },
 

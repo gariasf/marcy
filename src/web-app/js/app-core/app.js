@@ -3,14 +3,14 @@ import path     from 'path';
 const remote = electron.remote;
 const app    = remote.app;
 
-/*
+/**
  * Create necessary variables
  */
 const browserWindows = {};
 browserWindows.main = remote.getCurrentWindow();
 
-/*
- * supported Formats
+/**
+ * (That's the goal) Supported Formats
  */
 const supportedExtensions = [
     // MP3 / MP4

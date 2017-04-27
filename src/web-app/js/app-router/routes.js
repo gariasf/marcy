@@ -1,14 +1,14 @@
-/*
+/**
  * App assets
  */
 import GlobalActions from './../app-actions/GlobalActions'
 
-/*
+/**
  * Modules
  */
 import VueRouter from 'vue-router'
 
-/*
+/**
  * Views
  */
 import App from '../../vue/App.vue'
@@ -24,18 +24,14 @@ const init = {
     }
 };
 
-/*
+/**
  * Routes
  */
 const router = new VueRouter({
     mode: 'hash',
     routes: [
     {
-        path: '/settings', 
-        component: Settings,
-    },
-    { 
-        path: '/', 
+        path: '', 
         component: App,
         beforeEnter: init.app(),
         children: [
@@ -56,6 +52,10 @@ const router = new VueRouter({
                 component: Playlists,
             }
         ]
+    },
+    {
+        path: '/settings', 
+        component: Settings,
     }
   ]
 })

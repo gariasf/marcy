@@ -2,7 +2,6 @@
 
 process.env.NODE_ENV = 'production' // Drastically increase performances
 
-const { default: installExtension, VUEJS_DEVTOOLS } = require('electron-devtools-installer')
 const path                                          = require('path')
 const electron                                      = require('electron')
 const minimist                                      = require('minimist')
@@ -59,8 +58,9 @@ app.on('ready', () => {
         minWidth       : 900,
         minHeight      : 550,
         webPreferences : {
-            blinkFeatures       : 'OverlayScrollbars', // Enable overlay scrollbars}
-            experimentalFeatures: true,                // Enable CSS grid property
+            blinkFeatures       : 'OverlayScrollbars', // Enable overlay scrollbars
+            experimentalFeatures: true,                // Enable CSS grid property,
+            webSecurity         : false                // Bypass "not allowed to load local resource" error (temporal, looking for a better way to fix this)
 
         }
     };
@@ -80,9 +80,6 @@ app.on('ready', () => {
     })
 
     if(commandline.env != 'production') {
-        installExtension(VUEJS_DEVTOOLS)
-        .then((name) => console.log(`Added Extension:  ${name}`))
-        .catch((err) => console.log('An error occurred: ', err))
         mainWindow.openDevTools()
     }
 })
