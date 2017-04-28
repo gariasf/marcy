@@ -12,7 +12,6 @@ import VueRouter from 'vue-router'
  * Views
  */
 import App from '../../vue/App.vue'
-import Settings from './../../vue/components/Settings/Settings'
 
 import Library from './../../vue/components/Column/SelectorColumn/Library/Library'
 import Folders from './../../vue/components/Column/SelectorColumn/Folders/Folders'
@@ -52,10 +51,6 @@ const router = new VueRouter({
                 component: Playlists,
             }
         ]
-    },
-    {
-        path: '/settings', 
-        component: Settings,
     }
   ]
 })

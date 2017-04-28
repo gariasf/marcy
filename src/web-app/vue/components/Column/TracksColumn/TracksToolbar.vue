@@ -2,15 +2,15 @@
     <div class="column__selector__toolbar__folders flex flex-cross-center flex-sa lb-b">
         <div class="column__selector__toolbar__action-icons flex flex-cross-center flex-sa">
             <!-- Create a new playlist (will create a new playing queue) -->
-            <i class="column__selector__toolbar__action-icon"><Icon iconName='add-playlist' /></i>
+            <i class="icon--action-icon"><Icon iconName='add-playlist' /></i>
             <!-- Import an already created playlist -->
-            <i class="column__selector__toolbar__action-icon"><Icon iconName='import' /></i>
+            <i class="icon--action-icon"><Icon iconName='import' /></i>
             <!-- Save the current playing queue -->
-            <i class="column__selector__toolbar__action-icon"><Icon iconName='save' /></i>
+            <i class="icon--action-icon"><Icon iconName='save' /></i>
             <!-- Undo action (like adding songs) -->
-            <i class="column__selector__toolbar__action-icon"><Icon iconName='undo' /></i>
+            <i class="icon--action-icon"><Icon iconName='undo' /></i>
             <!-- Redo action -->
-            <i class="column__selector__toolbar__action-icon"><Icon iconName='redo' /></i>
+            <i class="icon--action-icon"><Icon iconName='redo' /></i>
         </div>
         <!-- For searching songs in the playing queue -->
         <div class="column__selector__toolbar__input-wrapper flex flex-full-center">

@@ -3,7 +3,7 @@
         <!-- Toolbar to navigate the FS and/or select a path -->
         <FoldersToolbar :currentDir="this.currentDir" :goUp="goUp" :goHome="goHome" :goTo="goTo" />
         <!-- List of files and folders in the current folder -->
-        <FoldersListing :dirContent="this.dirContents" :goIn="goIn" />
+        <FoldersListing :dirContent="this.dirContents" :currentDir="this.currentDir" :goIn="goIn" />
     </div>
 </template>
 
@@ -32,12 +32,8 @@
         },
         methods: {
             goUp: function() {
-                if(SelectorActions.lsDir(path.join(this.currentDir + '/../')) == null) {
-                    console.log("No permission, man")
-                } else {
-                    this.currentDir = path.join(this.currentDir + '/../')
-                    this.dirContents = SelectorActions.lsDir(this.currentDir)
-                }
+                this.currentDir = path.join(this.currentDir + '/../')
+                this.dirContents = SelectorActions.lsDir(this.currentDir)
             },
 
             goHome: function() {
@@ -46,7 +42,7 @@
             },
 
             goIn: function(dir) {
-                if(!fs.statSync(path.join(this.currentDir, dir)).isDirectory()) {
+                if(!SelectorActions.isDirectoryExt(dir, this.currentDir)) {
                     // If we are here then this means that we're opening an audio file, do something with it
                     // This is temporal, will change once we have functional playing queue
                     Player.setAudioSrc(Utils.parseUri(path.resolve(this.currentDir, dir)))
@@ -58,12 +54,8 @@
             },
 
             goTo: function(folderPath) {
-                 if(SelectorActions.lsDir(folderPath[0]) == null) {
-                    console.log("No permission, man")
-                } else {
-                    this.currentDir = folderPath[0]
-                    this.dirContents = SelectorActions.lsDir(folderPath[0])
-                }
+                this.currentDir = folderPath[0]
+                this.dirContents = SelectorActions.lsDir(folderPath[0])
             }
         }
     }

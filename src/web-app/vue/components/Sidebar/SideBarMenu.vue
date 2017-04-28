@@ -5,7 +5,7 @@
             <router-link to="/selector/folders"><SideBarMenuItem text='Folders' icon="folders-multiple" :is-active="($route.path == '/selector/folders') ? 'true' : 'false'" /></router-link>
             <router-link to="/selector/playlists"><SideBarMenuItem text='Playlists' icon="playlist" :is-active="($route.path == '/selector/playlists') ? 'true' : 'false' " /></router-link>
             <hr class="separator" />
-            <router-link to="/settings"><SideBarMenuItem text='Settings' icon="config" /></router-link>
+           <SideBarMenuItem text='Settings' icon="config" />
             <SideBarMenuItem text='About Marcy' icon="info" />
         </ul>
     </div>

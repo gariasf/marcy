@@ -10,11 +10,13 @@ import "../sass/styles.scss";
 */
 import Vue       from 'vue'
 import VueRouter from 'vue-router'
+import Vuex      from 'vuex'
 
 /**
 * Vue statements
 */
 Vue.use(VueRouter)
+Vue.use(Vuex)
 
 /**
 * Components

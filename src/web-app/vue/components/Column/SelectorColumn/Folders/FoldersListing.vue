@@ -1,7 +1,7 @@
 <template>
     <div class="column__selector__folders__listing">
         <!-- Each component below this represents a file or a directory -->
-        <FoldersListingItem v-for="(item, key) in dirContent" :key="key" :text="item" :goIn="goIn"/>
+        <FoldersListingItem v-for="(item, key) in dirContent" :key="key" :text="item" :goIn="goIn" :context="currentDir" />
     </div>
 </template>
 
@@ -13,6 +13,6 @@
         components: {
             FoldersListingItem
         },
-        props: ['dirContent', 'goIn']
+        props: ['dirContent', 'goIn', 'currentDir']
     }
 </script>

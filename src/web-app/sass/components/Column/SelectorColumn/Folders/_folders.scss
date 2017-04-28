@@ -8,6 +8,7 @@
     overflow-x: hidden;
     max-height: calc(100vh - 1.65em);
     padding-bottom: $base-pm*2;
+
     // Every row (every file/folder being listed)
     div {
         font-size: .8em;
@@ -16,8 +17,10 @@
         overflow: hidden;
         text-overflow: ellipsis;
         
-        &:hover {
+        &:hover,
+        &:focus {
             background-color: nth($palette-primary, 2);
+            outline: none;
         }
     }
 }

@@ -6,19 +6,52 @@ import app from './../app-core/app'
 
 const defaultDir = os.homedir() // OS default user home directory
 
-/** ---------------------
-* TODO: MAKE FS ASYNC
-* ---------------------- */
+/**
+ * Filters elements by extension
+ * 
+ * @param string element
+ * @return boolean
+ */
+const isValidFile = function (element) {
+    let extName = path.extname(element)
+
+    return app.supportedExtensions.includes(extName)
+}
 
 /**
- * Filters files that have a specific extension
+ * Filters elements by type (external call)
  * 
- * @param dir element
- * @return dir
+ * @param string dir
+ * @return boolean
  */
-const fileFilter = function (element) {
-    let extName = path.extname(element)
-    return app.supportedExtensions.includes(extName)
+const isDirectoryExt = function (dir, context) {
+    var result = false
+
+    try {
+        result = fs.statSync(path.join(context, dir)).isDirectory()
+    } catch (err) {
+        return result
+    }
+
+    return result
+}
+
+/**
+ * Filters elements by type
+ * 
+ * @param string dir
+ * @return boolean
+ */
+const isDirectory = function (dir) {
+    var result = false
+
+    try {
+        result = fs.statSync(path.join(this, dir)).isDirectory()
+    } catch (err) {
+        return result
+    }
+
+    return result
 }
 
 /**
@@ -28,19 +61,33 @@ const fileFilter = function (element) {
  * @return array
  */
 const lsDir = function(dir) {
-    let totalItems
+    var totalItems = []
+
     try {
-        totalItems = (fs.readdirSync(dir)
-                .filter(file => fs.statSync(path.join(dir, file)).isDirectory()) // Return directories
-                .concat(fs.readdirSync(dir).filter(fileFilter)))                 // And specific file extensions
-    } catch (err) {
-        return null
-    }
+        fs.readdir(dir, function(err, files) {
+            if (err) {
+                return null
+            } else {
+                totalItems.push(
+                    ...files
+                        .filter(isDirectory.bind(dir))      // Return directories
+                        .concat(files.filter(isValidFile))) // And specific file extensions
+            }
+        })} catch (err) {
+            return null
+        }
+
     return totalItems
+
 }
+
+
 
 export default {
     lsDir,
+    isValidFile,
+    isDirectory,
+    isDirectoryExt,
 
     defaultDir
 }

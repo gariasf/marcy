@@ -2,7 +2,7 @@ i {
     display: inline-block;
 }
 
-.column__selector__toolbar__action-icon {
+.icon--action-icon {
     svg {
         transform: scale(.75);
         fill:  nth($palette-primary, 8);
@@ -10,6 +10,13 @@ i {
 
     &:hover {
         background-color: nth($palette-primary, 2);
+    }
+}
+
+.icon--file-list-item {
+     svg {
+        transform: scale(.75);
+        fill:  nth($palette-primary, 8);
     }
 }
 
